@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vQf-uH-8jp">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--TicTacToe-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TicTacToeViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,420 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tictactoeBoard" translatesAutoresizingMaskIntoConstraints="NO" id="6i9-pb-dYR">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQF-BT-127">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="53" y="98" width="88" height="122"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnXOPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QqI-GO-AOH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9T-ct-CqT">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="156" y="98" width="88" height="122"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnXOPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hb9-T8-KUr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e80-qH-nue">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="156" y="239" width="88" height="122"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnXOPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sV0-iy-tEJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPz-EZ-ZSL">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="260" y="239" width="88" height="122"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnXOPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wIk-lB-PYe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bob-sz-Q7k">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="53" y="388" width="88" height="122"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnXOPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jod-4E-Cfk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsf-gE-AlW">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="156" y="388" width="88" height="122"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnXOPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQg-MZ-gkP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21v-Ds-AYK">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="260" y="388" width="88" height="122"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnXOPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zrk-wr-BWP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Riv-F1-Ot4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="53" y="239" width="88" height="122"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnXOPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fxG-2m-gPj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OL6-dz-tAw">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Settings"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="291" y="541" width="57" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="bWL-iO-yQc" kind="show" id="29B-hn-lJk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAs-rO-ZmE">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="260" y="98" width="88" height="122"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnXOPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c9V-H7-t3R"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PandaAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="Sg5-c7-TrI">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="91" y="9" width="50" height="50"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GirlAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="dE4-gA-GWo">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="260" y="9" width="50" height="50"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8Y-Ef-iel">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="156" y="28" width="12" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgp-zv-hID">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="227" y="28" width="17" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djh-VY-dw1">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="43" y="20" width="40" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIa-XO-fVG">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="318" y="20" width="44" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Games:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3s-G3-3WW">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="53" y="545" width="100" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WE-Dg-YVl">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="156" y="545" width="36" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="6i9-pb-dYR"/>
+                                <exclude reference="lQF-BT-127"/>
+                                <exclude reference="w9T-ct-CqT"/>
+                                <exclude reference="e80-qH-nue"/>
+                                <exclude reference="ZPz-EZ-ZSL"/>
+                                <exclude reference="Bob-sz-Q7k"/>
+                                <exclude reference="qsf-gE-AlW"/>
+                                <exclude reference="21v-Ds-AYK"/>
+                                <exclude reference="Riv-F1-Ot4"/>
+                                <exclude reference="OL6-dz-tAw"/>
+                                <exclude reference="qAs-rO-ZmE"/>
+                                <exclude reference="Sg5-c7-TrI"/>
+                                <exclude reference="dE4-gA-GWo"/>
+                                <exclude reference="N8Y-Ef-iel"/>
+                                <exclude reference="Lgp-zv-hID"/>
+                                <exclude reference="Djh-VY-dw1"/>
+                                <exclude reference="FIa-XO-fVG"/>
+                                <exclude reference="I3s-G3-3WW"/>
+                                <exclude reference="7WE-Dg-YVl"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="6i9-pb-dYR"/>
+                                <include reference="lQF-BT-127"/>
+                                <include reference="w9T-ct-CqT"/>
+                                <include reference="e80-qH-nue"/>
+                                <include reference="ZPz-EZ-ZSL"/>
+                                <include reference="Bob-sz-Q7k"/>
+                                <include reference="qsf-gE-AlW"/>
+                                <include reference="21v-Ds-AYK"/>
+                                <include reference="Riv-F1-Ot4"/>
+                                <include reference="OL6-dz-tAw"/>
+                                <include reference="qAs-rO-ZmE"/>
+                                <include reference="Sg5-c7-TrI"/>
+                                <include reference="dE4-gA-GWo"/>
+                                <include reference="N8Y-Ef-iel"/>
+                                <include reference="Lgp-zv-hID"/>
+                                <include reference="Djh-VY-dw1"/>
+                                <include reference="FIa-XO-fVG"/>
+                                <include reference="I3s-G3-3WW"/>
+                                <include reference="7WE-Dg-YVl"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" title="TicTacToe" id="LGA-gF-37W"/>
+                    <connections>
+                        <outlet property="PlayerOneSymbol" destination="N8Y-Ef-iel" id="37I-As-qGG"/>
+                        <outlet property="PlayerOneTurn" destination="Sg5-c7-TrI" id="fBN-kH-5RC"/>
+                        <outlet property="PlayerTwoSymbol" destination="Lgp-zv-hID" id="bF2-IU-esc"/>
+                        <outlet property="PlayerTwoTurn" destination="dE4-gA-GWo" id="Hbe-pC-XGi"/>
+                        <outlet property="playerOneScore" destination="Djh-VY-dw1" id="sMx-mM-Iz4"/>
+                        <outlet property="playerTwoScore" destination="FIa-XO-fVG" id="O6C-6g-jF3"/>
+                        <outlet property="totalGameCount" destination="7WE-Dg-YVl" id="4Pm-qG-BzV"/>
+                        <outletCollection property="ticTacToeCells" destination="lQF-BT-127" collectionClass="NSMutableArray" id="ARr-9A-9eq"/>
+                        <outletCollection property="ticTacToeCells" destination="ZPz-EZ-ZSL" collectionClass="NSMutableArray" id="XBg-Q4-NcT"/>
+                        <outletCollection property="ticTacToeCells" destination="w9T-ct-CqT" collectionClass="NSMutableArray" id="R3i-Bq-T9V"/>
+                        <outletCollection property="ticTacToeCells" destination="qAs-rO-ZmE" collectionClass="NSMutableArray" id="g7z-FR-dsT"/>
+                        <outletCollection property="ticTacToeCells" destination="e80-qH-nue" collectionClass="NSMutableArray" id="McF-lF-nnL"/>
+                        <outletCollection property="ticTacToeCells" destination="Riv-F1-Ot4" collectionClass="NSMutableArray" id="3Vo-R0-c4H"/>
+                        <outletCollection property="ticTacToeCells" destination="e80-qH-nue" collectionClass="NSMutableArray" id="wJR-JS-LYp"/>
+                        <outletCollection property="ticTacToeCells" destination="Bob-sz-Q7k" collectionClass="NSMutableArray" id="XFF-0z-Ge1"/>
+                        <outletCollection property="ticTacToeCells" destination="qsf-gE-AlW" collectionClass="NSMutableArray" id="O3h-KQ-Ap8"/>
+                        <outletCollection property="ticTacToeCells" destination="21v-Ds-AYK" collectionClass="NSMutableArray" id="Llq-9K-c1O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1482" y="220"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="gO9-3w-374">
+            <objects>
+                <viewController id="bWL-iO-yQc" customClass="SettingsViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OMm-uv-6pC"/>
+                        <viewControllerLayoutGuide type="bottom" id="ls1-yU-w5P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xII-z7-fjL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mvk-io-Dxf">
+                                <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="X"/>
+                                    <segment title="O"/>
+                                </segments>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="104" width="49" height="29"/>
+                                </variation>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1 Character:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efj-FB-q4M">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="75" width="144" height="21"/>
+                                </variation>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yMf-d1-TrT">
+                                <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Human"/>
+                                    <segment title="Computer"/>
+                                </segments>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="193" width="151" height="29"/>
+                                </variation>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LI6-yp-5Pp">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Save"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="218" y="398" width="34" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnSavePressed:" destination="bWL-iO-yQc" eventType="touchUpInside" id="Dhq-bA-pLf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVr-4V-lb3">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Cancel"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="148" y="398" width="48" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnCancel:" destination="bWL-iO-yQc" eventType="touchUpInside" id="0Sb-Y7-YLC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lu9-DS-FeK">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="164" width="123" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="mvk-io-Dxf"/>
+                                <exclude reference="efj-FB-q4M"/>
+                                <exclude reference="yMf-d1-TrT"/>
+                                <exclude reference="LI6-yp-5Pp"/>
+                                <exclude reference="SVr-4V-lb3"/>
+                                <exclude reference="Lu9-DS-FeK"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="mvk-io-Dxf"/>
+                                <include reference="efj-FB-q4M"/>
+                                <include reference="yMf-d1-TrT"/>
+                                <include reference="LI6-yp-5Pp"/>
+                                <include reference="SVr-4V-lb3"/>
+                                <include reference="Lu9-DS-FeK"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="rfT-Lz-nJt"/>
+                    <connections>
+                        <outlet property="playerChoice" destination="mvk-io-Dxf" id="sQn-lV-xRF"/>
+                        <outlet property="playerOpponent" destination="yMf-d1-TrT" id="8n4-qf-EKP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nV2-OU-RUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2275.5" y="220"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="itu-EW-ynS">
+            <objects>
+                <viewController id="vQf-uH-8jp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PAy-Mz-JXd"/>
+                        <viewControllerLayoutGuide type="bottom" id="876-7c-e8Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gpR-EQ-hHQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kp-tW-7iZ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Start New Game"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="144" y="285" width="113" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="4LR-cf-Kb4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="0kp-tW-7iZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="0kp-tW-7iZ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1H6-Oy-Kax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481.5" y="220"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GirlAvatar" width="206" height="204"/>
+        <image name="PandaAvatar" width="206" height="204"/>
+        <image name="tictactoeBoard" width="300" height="300"/>
+    </resources>
 </document>
